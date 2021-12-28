@@ -1,0 +1,1 @@
+sudo gcc main.c -o i
