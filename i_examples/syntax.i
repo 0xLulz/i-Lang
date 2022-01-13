@@ -10,7 +10,7 @@
 @Insert "../new.i" // Looks thru the directory before the current path
 
 fnc main(argc{int}. argv{str}) {
-    print("hello", NLINE);
+    print("hello world!", NLINE);
 };
 
 // Normal/Private Function
