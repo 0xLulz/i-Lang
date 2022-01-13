@@ -14,8 +14,10 @@ int main(int argc, char **argv[]) {
         if(argv[i] == NULL) continue;
         if(strstr(argv[i], ".i")) {
             print(argv[i], 1);
-            return 0;
         }
+        // If no file has been found then dont do anything. a file has to be found first
+
+        // if(strstr(argv[i], "")) left off here
     }
     i.operate(&i, "test.i");
 }
