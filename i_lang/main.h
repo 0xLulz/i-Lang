@@ -1,5 +1,7 @@
 #ifndef I_MAIN_H
 #define I_MAIN_H
+#include "errors.h"
+#include "../i_lib/print.h"
 typedef struct BuiltinStuff {
     char        **modules[255];
     char        **methods[255];
@@ -42,7 +44,8 @@ typedef struct iLangx {
     FncChecker  *fnc_check;
     VarChecker  *var_check;
     Builtins    *builtin;
-    ExternalFnc *ExtFnc;
+    ExternalFnc *extfnc;
+    Error       *err;
     void*       (*operate)(struct iLang *i, char *file);
 } iLang;
 
