@@ -14,6 +14,7 @@ void __adderr(Error *e, char *err_file, int err_line, char *err) {
 }
 
 void err_n_die(char *msg) {
+    printf("test");
     printf("%s", msg);
     exit(0);
 }
