@@ -5,11 +5,20 @@
 #include "i_lang/main.h"
 
 int main(int argc, char **argv[]) {
-    iLang i; Error e;
-    Build_iLang(&i); Build_Error(&e);
-    print("Starting up....", 1);
-    if(argc < 1) e.die("[x] Error, Invalid Argument");
+    // define the main compiler
+    iLang i; 
+    Error e;
 
+    // initalize the main compiler
+    Build_iLang(&i); 
+    Build_Error(&e);
+
+    // startup
+    print("Starting up....", 1);
+    if(argc < 1) 
+        e.die("[x] Error, Invalid Argument");
+
+    // test source files
     for(int i = 0; i <= strlen(argv); i++) {
         if(argv[i] == NULL) continue;
         if(strstr(argv[i], ".i")) {
@@ -19,5 +28,7 @@ int main(int argc, char **argv[]) {
 
         // if(strstr(argv[i], "")) left off here
     }
+
+    // compile
     i.operate(&i, "test.i");
 }
