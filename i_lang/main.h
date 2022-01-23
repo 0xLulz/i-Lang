@@ -47,13 +47,19 @@ typedef struct iLangx {
     ExternalFnc *extfnc;
     Error       *err;
     void*       (*operate)(struct iLang *i, char *file);
+    void*       (*set_file)(struct iLang *i, char *filepath);
 } iLang;
 
+void __set_file(iLang *i, char *filepath) {
+    i->main_file = filepath;
+}
+
 void __operate(iLang *i, char *file) {
-    char test[255];
+    i.set_file(&i, file);
 }
 
 iLang Build_iLang(iLang *i) {
     i->operate = __operate;
+    i->set_file = __set_file;
 }
 #endif
