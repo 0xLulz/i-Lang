@@ -51,11 +51,12 @@ typedef struct iLangx {
 } iLang;
 
 void __set_file(iLang *i, char *filepath) {
-    i->main_file = filepath;
+    strcpy(i->main_fil, filepath);
 }
 
 void __operate(iLang *i, char *file) {
     i.set_file(&i, file);
+    
 }
 
 iLang Build_iLang(iLang *i) {
